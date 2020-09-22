@@ -21,7 +21,15 @@ const HomeScreen = () => {
     return(
         <>
             <View style={styles.container}>
-                <Text style={styles.font}>Bonjour</Text> 
+                <View>
+                    <Text>Bonjour</Text>
+                </View>
+                <view>
+                    <Text style={styles.name} > Hello Fabio </Text>
+                </view>
+                <view>
+                    <Text style={styles.order} > Want to order delicious food ?</Text>
+                </view>
             </View>
         </>
     )
@@ -29,17 +37,21 @@ const HomeScreen = () => {
 
 
 const styles = StyleSheet.create({
-  container: {
+    container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-   
-  },
-  font: {
-    fontFamily: "Caveat_700Bold",
-    fontSize: 50,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    padding: 20,
 
+  },
+  name: {
+    fontFamily: "Caveat_700Bold",
+    fontSize: 40,
+  },
+  order: {
+    fontFamily: "Caveat_400Regular",
+    fontSize: 20,
   }
 });
 
