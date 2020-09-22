@@ -6,12 +6,13 @@ const ListCatego = () =>{
     console.log(Categorie);
 
     return(
-        <View style={styles.container}>
+        <View >
 
-			<FlatList
+            <FlatList
+                numColumns={2}
                 data={Categorie}
                 renderItem={ info => (
-                    <View >
+                    <View style={styles.container} >
                         <View style={styles.imageContainer}>
                             <Image source={info.item.icon} style={styles.image}/>
                         </View>
@@ -32,9 +33,10 @@ const ListCatego = () =>{
 
 
 const styles = StyleSheet.create({
+    
 	container: {
-		flexDirection: "row",
-        marginVertical: 60,
+		flexDirection: "coulumns",
+        margin: 5,
         backgroundColor: "#FAFBFA",
         height: 150,
         width: 150,

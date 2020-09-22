@@ -1,13 +1,18 @@
 import React from 'react';
 import {View} from 'react-native';
-import HomeScreen from './screens/HomeScreen'
+// import HomeScreen from './screens/HomeScreen'
+import FirstScreen from './screens/FirstScreen'
 
-export default function App() {
+
+const App = () => {
   return (
    <>
-      <HomeScreen />
+      <FirstScreen  />
    </>
   );
 }
+
+
+export default App
 
 
