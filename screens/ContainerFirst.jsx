@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Image, Icon, Button} from "react-native";
-
+import { StyleSheet, View, Image, Text, Button} from "react-native";
 import {AppLoading} from "expo";
 import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/caveat';
 
@@ -10,7 +9,7 @@ import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/c
 const ContainerFirst = (props) => {
     console.log(props);
     const pic = require("../assets/bg.jpg");
-    const icon = require("../assets/chinesefood.png")
+    const icon = require("../assets/seafood.png");
 
     let [fontsLoaded] = useFonts({
         Caveat_400Regular,
@@ -29,14 +28,15 @@ const ContainerFirst = (props) => {
                         <View style={styles.imageContainer}>
                             <Image source={pic} style={styles.image}/>
                         </View>
-
-                        <Button
-                            style={styles.imageButton}
-                            source={icon}
-                            title="Go"
-                            onPress={ () => props.navigation.navigate("Profile")}
-
-                        /> 
+                        <View  style={styles.imageButton}>
+                            <Button
+                                    color="#181613"
+                                    title="Start"
+                                    onPress={ () => props.navigation.navigate("Profile")}
+                                    >
+                            </Button>
+                                    
+                        </View>
             </View>
 
         </>
@@ -46,8 +46,10 @@ const ContainerFirst = (props) => {
 const styles = StyleSheet.create({
     
 	container: {
-        flex: 1,
+        flexDirection: "coulumns",
         backgroundColor: "#C5D5BC",
+        justifyContent: "center",
+		alignItems: "center",
 
 	},
 
@@ -55,8 +57,7 @@ const styles = StyleSheet.create({
         borderWidth: 15,
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
-        justifyContent: "center",
-		alignItems: "center",
+       
         // borderTopLeftRadius: 20,
         // borderTopRightRadius: 20,
 	},
@@ -64,21 +65,20 @@ const styles = StyleSheet.create({
 		width: 350,
 		height: 600,
     },
-
-    titre: {
-        fontFamily: "Caveat_700Bold",
-        fontSize: 50,
-        marginTop: 10,
-
-       },
-       imageButton: {
-		height: 50,
-		width: 50,
-		borderRadius: 50 / 3,
+    imageButton: {
+      
+		height: 100,
+		width: 100,
+		borderRadius: 150 / 3,
 		backgroundColor: "#F7F4F7",
-		marginRight: 15,
+        marginTop: 10,
+        marginBottom: 10,
 		justifyContent: "center",
 		alignItems: "center",
+    },
+    imageIcon: {
+		width: 100,
+		height: 100,
 	},
 
 })
