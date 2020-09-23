@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Image, Text, Button} from "react-native";
+import { StyleSheet, View, Image, Button} from "react-native";
 import {AppLoading} from "expo";
 import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/caveat';
 
@@ -9,7 +9,6 @@ import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/c
 const ContainerFirst = (props) => {
     console.log(props);
     const pic = require("../assets/bg.jpg");
-    const icon = require("../assets/seafood.png");
 
     let [fontsLoaded] = useFonts({
         Caveat_400Regular,
@@ -28,14 +27,23 @@ const ContainerFirst = (props) => {
                         <View style={styles.imageContainer}>
                             <Image source={pic} style={styles.image}/>
                         </View>
+                        <View style={styles.footer}>
                         <View  style={styles.imageButton}>
                             <Button
                                     color="#181613"
-                                    title="Start"
+                                    title="Profil"
                                     onPress={ () => props.navigation.navigate("Profile")}
                                     >
                             </Button>
-                                    
+                            </View>
+                            <View  style={styles.imageButton}>
+                            <Button
+                                    color="#181613"
+                                    title="EatTime"
+                                    onPress={ () => props.navigation.navigate("Food")}
+                                    >
+                            </Button>
+                        </View>
                         </View>
             </View>
 
@@ -57,9 +65,6 @@ const styles = StyleSheet.create({
         borderWidth: 15,
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
-       
-        // borderTopLeftRadius: 20,
-        // borderTopRightRadius: 20,
 	},
 	image: {
 		width: 350,
@@ -73,15 +78,18 @@ const styles = StyleSheet.create({
 		backgroundColor: "#F7F4F7",
         marginTop: 10,
         marginBottom: 10,
+        marginLeft: 15,
 		justifyContent: "center",
 		alignItems: "center",
     },
-    imageIcon: {
-		width: 100,
-		height: 100,
+    footer: {
+      flexDirection: "row",
+      
+	
 	},
 
 })
+
 
 
 

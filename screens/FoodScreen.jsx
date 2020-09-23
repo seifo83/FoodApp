@@ -6,8 +6,8 @@ import CategorieView from '../components/CategorieView'
 
 
 
-const HomeScreen = () => {
-
+const FoodScreen = (props) => {
+console.log(props);
     let [fontsLoaded] = useFonts({
         Caveat_400Regular,
         Caveat_700Bold,
@@ -21,9 +21,6 @@ const HomeScreen = () => {
     return(
         <>
             <View style={styles.container}>
-                <View>
-                    <Text>Bonjour</Text>
-                </View>
                 <View>
                     <Text style={styles.name} > Hello Fabio </Text>
                     <Text style={styles.order} > Want to order delicious food ?</Text>
@@ -67,4 +64,4 @@ const styles = StyleSheet.create({
 });
 
 
-  export default HomeScreen
+  export default FoodScreen
