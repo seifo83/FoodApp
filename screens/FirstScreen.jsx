@@ -13,7 +13,7 @@ const FirstScreen = () => {
 
             <NavigationContainer>
                 <Stack.Navigator >
-                        <Stack.Screen  name="home" component={ContainerFirst} />
+                        <Stack.Screen options={{headerShown: false}} name="home" component={ContainerFirst}  />
                         <Stack.Screen  name="Profile" component={ProfileScreen} />
                         <Stack.Screen  name="Food" component={FoodScreen} />
                 </Stack.Navigator>

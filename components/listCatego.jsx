@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet, Image, FlatList} from "react-native"
+import {View, Text, StyleSheet, Image, FlatList, Button} from "react-native"
 import {Categorie} from "../datacategorie";
 
 const ListCatego = () =>{
@@ -19,6 +19,7 @@ const ListCatego = () =>{
                         <View style={styles.textContainer}>
                             <View>
                                 <Text>{info.item.title}</Text>
+                                {/* <Button title={info.item.title} onPress={ListeFood} /> */}
                             </View>
                         </View>
                     </View>

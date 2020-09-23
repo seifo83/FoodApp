@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { StyleSheet, Button, Text, TextInput, View } from "react-native";
 import {AppLoading} from "expo";
 import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/caveat';
@@ -7,6 +7,20 @@ import CategorieView from '../components/CategorieView'
 
 
 const FoodScreen = (props) => {
+
+  const [categorie, setCategorie] = useState("dinnerfood")
+  const [update, setUpdate] = useState("")
+ 
+
+  const setUpdate = () => {
+    setCategorie(update => {
+      
+    } )
+    
+	}
+
+
+
 console.log(props);
     let [fontsLoaded] = useFonts({
         Caveat_400Regular,
@@ -28,7 +42,7 @@ console.log(props);
                 <View>
                     
                 </View>
-                <CategorieView />
+                <CategorieView onClick={} />
             </View>
         </>
     )
