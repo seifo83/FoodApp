@@ -1,34 +1,45 @@
 import React from "react";
-import {View, Text, StyleSheet, Image, FlatList, Button} from "react-native"
+import {View, Text, StyleSheet, Image, FlatList, Pressable, Button} from "react-native"
 import {Categorie} from "../datacategorie";
 
-const ListCatego = () =>{
+const ListCatego = (props) =>{
     console.log(Categorie);
-
+    console.log(props);
     return(
-        <View >
+            <View >
 
-            <FlatList
-                numColumns={2}
-                data={Categorie}
-                renderItem={ info => (
-                    <View style={styles.container} >
-                        <View style={styles.imageContainer}>
-                            <Image source={info.item.icon} style={styles.image}/>
-                        </View>
-                        <View style={styles.textContainer}>
-                            <View>
-                                <Text>{info.item.title}</Text>
-                                {/* <Button title={info.item.title} onPress={ListeFood} /> */}
+                <FlatList
+                    numColumns={2}
+                    data={Categorie}
+                    renderItem={ info => {
+                        console.log(info)
+                        return(
+
+                        <Pressable onPress={() => props.changeCategorie(info.item.categorieName)}>
+
+                            <View style={styles.container}>
+                                <View style={styles.imageContainer}>
+                                    <Image source={info.item.icon} style={styles.image}/>
+                                </View>
+                                <View style={styles.textContainer}>
+                                    <View>
+                                        <Text>{info.item.title}</Text>
+                                        {/* <Button title={info.item.title} onPress={ListeFood} /> */}
+                                    </View>
+                                </View>
                             </View>
-                        </View>
-                    </View>
-                )}
+                        </Pressable>
 
-                KeyExtractor={(info) => info.id}
-            />
 
-		</View>
+                    )}}
+
+
+
+                    KeyExtractor={(info) => info.id}
+                />
+
+
+            </View>
     )
 }
 
@@ -38,8 +49,8 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "coulumns",
         margin: 5,
-        backgroundColor: "#FAFBFA",
-        height: 150,
+        backgroundColor: "#C5D5BC",
+        height: 100,
         width: 150,
         borderRadius: 50 / 3,
         justifyContent: "center",
@@ -54,14 +65,19 @@ const styles = StyleSheet.create({
 	},
 	imageContainer: {
 		height: 50,
-		width: 50,
-	
-		
+        width: 50,
+
 	},
 	image: {
 		width: 50,
 		height: 50,
-	},
+    },
+    titre: {
+        fontWeight: "bold",
+        fontSize: 25,
+        marginTop: 20,
+       },
+
 })
 
 

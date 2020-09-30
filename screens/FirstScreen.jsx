@@ -6,6 +6,7 @@ import ProfileScreen from "./ProfileScreen"
 import FoodScreen from "./FoodScreen"
 
 
+
 const Stack = createStackNavigator()
 
 const FirstScreen = () => {

@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Text, View, StyleSheet } from "react-native";
 import ListCatego from './ListCatego';
+import ListePlatCategorie from './ListePlatCategorie';
 
 
 
 
-const CategorieView = () => {
 
+
+
+const CategorieView = (props) => {
+    console.log(props)
 
     return(
         <>
             <View>
                 <Text style={styles.titre}> Categories</Text>
-                <ListCatego />
+                <ListCatego categorie={props.categorie} changeCategorie={props.changeCategorie} />
+                <Text style={styles.titre}>Fine {props.type}</Text>
+
             </View>
 
             {/* <View>
@@ -32,6 +38,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 25,
     marginTop: 20,
+    marginBottom: 30,
+
    }
 });
 

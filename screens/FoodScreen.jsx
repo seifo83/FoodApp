@@ -3,25 +3,20 @@ import { StyleSheet, Button, Text, TextInput, View } from "react-native";
 import {AppLoading} from "expo";
 import {useFonts, Caveat_400Regular, Caveat_700Bold } from '@expo-google-fonts/caveat';
 import CategorieView from '../components/CategorieView'
+import PlatsCategorieView from '../components/PlatsCategorieView'
+
+import {plats} from '../datacategorie'
 
 
 
 const FoodScreen = (props) => {
 
-  const [categorie, setCategorie] = useState("dinnerfood")
-  const [update, setUpdate] = useState("")
- 
-
-  const setUpdate = () => {
-    setCategorie(update => {
-      
-    } )
-    
-	}
+  const [categorie, setCategorie] = useState("DinnerFood")
 
 
+    console.log(plats)
+    console.log(plats[categorie]);
 
-console.log(props);
     let [fontsLoaded] = useFonts({
         Caveat_400Regular,
         Caveat_700Bold,
@@ -40,9 +35,10 @@ console.log(props);
                     <Text style={styles.order} > Want to order delicious food ?</Text>
                 </View>
                 <View>
-                    
+
                 </View>
-                <CategorieView onClick={} />
+                <CategorieView type={categorie} changeCategorie={setCategorie} />
+                <PlatsCategorieView  type={plats[categorie]}  />
             </View>
         </>
     )
