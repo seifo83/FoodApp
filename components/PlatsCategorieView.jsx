@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Pressable  } from "react-native";
 import ListePlatCategorie from './ListePlatCategorie';
 
 
@@ -10,12 +10,16 @@ import ListePlatCategorie from './ListePlatCategorie';
 
 const PlatsCategorieView = (type) => {
     console.log(type)
+    console.log(type.maNavigation)
+
+    const [plat, setPlat] = useState("")
+    console.log(plat);
+    console.log(setPlat);
 
     return(
         <>
             <View>
-                <ListePlatCategorie  platcategorie={type} />
-
+                    <ListePlatCategorie maNavigation={type.navigation}  platcategorie={type} changePlat={setPlat} />
             </View>
 
             {/* <View>

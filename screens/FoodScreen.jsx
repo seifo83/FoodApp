@@ -38,7 +38,8 @@ const FoodScreen = (props) => {
 
                 </View>
                 <CategorieView type={categorie} changeCategorie={setCategorie} />
-                <PlatsCategorieView  type={plats[categorie]}  />
+
+                <PlatsCategorieView maNavigation={props.navigation}  type={plats[categorie]}  />
             </View>
         </>
     )

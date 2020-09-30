@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "coulumns",
         margin: 5,
-        backgroundColor: "#C5D5BC",
+        backgroundColor: "#c6dbb4",
         height: 100,
         width: 150,
         borderRadius: 50 / 3,
